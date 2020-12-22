@@ -14,12 +14,19 @@ public class Server {
                         String request = phone.readLine();
                         System.out.println("City: " + request);
                         String response = (int) (Math.random() * 30 - 10) + "";
-                        try {Thread.sleep(4000);} catch (InterruptedException e){ }
+                        try {
+                            Thread.sleep(4000);
+                        }
+                        catch (InterruptedException e){
+                            e.printStackTrace();
+                        }
                         phone.writeLine(response);
                         System.out.println("City temperature: " + response);
                         try {
                             phone.close();
-                        } catch (IOException e) {};
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        };
                     }).start();
 
                 }
